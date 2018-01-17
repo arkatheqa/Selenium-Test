@@ -1,0 +1,18 @@
+package arkapractice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+
+public class Test1 {
+public static void main(String[] args) throws InterruptedException{
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Arkapravo\\Downloads\\chromedriver.exe");
+	WebDriver d=new ChromeDriver();
+	d.get("https://https://itunes.apple.com/in/app/accuweather-weather-for-life/id300048137?mt=8");
+	String real="What's New in Version 11.2";
+	String arka=d.findElement(By.xpath("//*[@id='content']/div/div[2]/div[3]/h4")).getText();
+	Assert.assertEquals(arka, real);
+}
+}
